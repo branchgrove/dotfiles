@@ -31,6 +31,8 @@ local opt = {
 local g = {
   mapleader = " ", -- Set leader key
   maplocalleader = " ", -- Set local leader key
+  loaded_netrwPlugin = 1,
+  loaded_netrw = 1,
 }
 
 helpers.merge_tables(vim.opt, opt)

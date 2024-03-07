@@ -17,6 +17,8 @@ return {
       CmpDocumentation = { bg = bg_color },
       CmpDocumentationBorder = { bg = bg_color },
       Pmenu = { bg = bg_color },
+      WhichKeyFloat = { bg = bg_color },
+      WhichKeyBorder = { bg = bg_color }
     },
   },
   config = function(_, opts)

@@ -42,7 +42,7 @@ return {
 
     local normal_keymaps = {
       ["<Leader>ff"] = { builtin.find_files, desc = "[F]ind [F]iles" },
-      ["<Leader>fb"] = { builtin.buffers, desc = "[F]ind [B]uffers" },
+      ["<Leader><Leader>"] = { builtin.buffers, desc = "Find open buffers" },
       ["<Leader>fw"] = { builtin.live_grep, desc = "[F]ind [W]ords" },
       ["<Leader>fh"] = { builtin.help_tags, desc = "[F]ind [H]elp" },
       ["<Leader>fn"] = { function() builtin.find_files({ cwd = "~/.config/nvim" }) end, desc = "[F]ind [N]vim files" },

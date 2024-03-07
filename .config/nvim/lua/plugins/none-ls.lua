@@ -13,6 +13,7 @@ return {
         end,
       }),
       builtins.formatting.stylua,
+      builtins.diagnostics.actionlint,
     }
 
     require("null-ls").setup({
