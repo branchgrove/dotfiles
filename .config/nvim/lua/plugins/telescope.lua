@@ -47,6 +47,7 @@ return {
       ["<Leader>fh"] = { builtin.help_tags, desc = "[F]ind [H]elp" },
       ["<Leader>fn"] = { function() builtin.find_files({ cwd = "~/.config/nvim" }) end, desc = "[F]ind [N]vim files" },
       ["<Leader>fo"] = { function() builtin.live_grep({ grep_open_files = true }) end, desc = "[F]ind [O]pen files" },
+      ["<Leader>fd"] = { builtin.diagnostics, desc = "[F]ind [D]iagnostics" },
     }
 
     opts.defaults.mappings = {
