@@ -1,5 +1,4 @@
 local helpers = require("helpers")
-local disabled_formatters = require("disabled_formatters")
 
 return function()
   local telescope_builtin = require("telescope.builtin")
@@ -22,23 +21,6 @@ return function()
       telescope_builtin.lsp_definitions()
     end,
     desc = "[G]o to [D]efinition",
-  }
-
-  normal_keymaps["<Leader>lf"] = {
-    function()
-      vim.lsp.buf.format({
-        filter = function(client)
-          for _, value in ipairs(disabled_formatters) do
-            if value == client.name then
-              return false
-            end
-          end
-
-          return true
-        end
-      })
-    end,
-    desc = "Format document",
   }
 
   normal_keymaps["<Leader>lr"] = {
