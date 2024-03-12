@@ -8,6 +8,10 @@ local opt = {
   undofile = true, -- Save undo history
   ignorecase = true, -- Case-insensitive search
   smartcase = true, -- unless capital in search
+  smartindent = true,
+  tabstop = 2,
+  shiftwidth = 2,
+  expandtab = true,
   signcolumn = "yes", -- Signcolumn left of line numbers
   updatetime = 250, -- Decrease update time
   timeoutlen = 300,
@@ -26,6 +30,7 @@ local opt = {
   termguicolors = true, -- Enable 24-bit RGB colors in TUI
   title = true, -- Set terminal title to filename and path
   writebackup = false, -- Disable writing backup files before overwriting a file
+  guifont = "JetBrainsMonoNL Nerd Font:h14",
 }
 
 local g = {
@@ -34,6 +39,17 @@ local g = {
   loaded_netrwPlugin = 1,
   loaded_netrw = 1,
 }
+
+local neovide = {
+  neovide_padding_top = 1,
+  neovide_hide_mouse_when_typing = true,
+  neovide_fullscreen = true,
+  neovide_cursor_animation_length = 0,
+}
+
+if vim.g.neovide then
+  helpers.merge_tables(vim.g, neovide)
+end
 
 helpers.merge_tables(vim.opt, opt)
 helpers.merge_tables(vim.g, g)

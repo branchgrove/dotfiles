@@ -1,4 +1,5 @@
 require("options")
+require("filetypes")
 require("lazy-setup")
 require("diagnostic")
 require("keymaps")

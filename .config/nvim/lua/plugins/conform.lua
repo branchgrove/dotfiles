@@ -4,7 +4,10 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         javascript = { { "biome", "prettier" } },
+        templ = { "templ" },
+        go = { "gofmt" },
       },
+      lsp_fallback = false,
     })
 
   vim.keymap.set("n", "<Leader>lf", require("conform").format, { desc = "Format document" })

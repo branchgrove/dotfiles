@@ -8,7 +8,7 @@ return {
       disable = function(_, bufnr) return vim.b[bufnr].large_buf end,
     },
     incremental_selection = { enable = true },
-    indent = { enable = true },
+    indent = { enable = false },
   },
   config = function(plugin, opts)
     require("nvim-treesitter.configs").setup(opts)
