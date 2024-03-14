@@ -6,6 +6,7 @@ return {
         javascript = { { "biome", "prettier" } },
         templ = { "templ" },
         go = { "gofmt" },
+        terraform = { "terraform_fmt" },
       },
       lsp_fallback = false,
     })
