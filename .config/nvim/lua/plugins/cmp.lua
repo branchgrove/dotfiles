@@ -19,9 +19,11 @@ return {
       window = {
         completion = {
           border = "rounded",
+          zindex = 1000,
         },
         documentation = {
           border = "rounded",
+          zindex = 1000,
         },
       },
       sources = {

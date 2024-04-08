@@ -33,6 +33,7 @@ end
 
 vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
   config = config or {}
+  config["wrap_at"] = 80
   config.focus_id = ctx.method
 
   -- Don't notify when no information available

@@ -7,6 +7,7 @@ return {
         templ = { "templ" },
         go = { "gofmt" },
         terraform = { "terraform_fmt" },
+        sh = { "shfmt" }
       },
       lsp_fallback = false,
     })

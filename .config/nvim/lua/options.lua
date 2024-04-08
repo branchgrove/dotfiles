@@ -18,7 +18,7 @@ local opt = {
   splitright = true, -- Split window to right
   splitbelow = true, -- Split window to bottom
   list = true, -- Show certain invisible chracters
-  listchars = { tab = '» ', trail = '·', nbsp = '␣' }, -- How invisible characters should be displayed
+  listchars = { tab = '  ', trail = '·', nbsp = '␣' }, -- How invisible characters should be displayed
   scrolloff = 10, -- Minimal number of lines to keep above and below the cursor
   hlsearch = false, -- Highlight text on search
   cmdheight = 0, -- Hide command line unless needed
