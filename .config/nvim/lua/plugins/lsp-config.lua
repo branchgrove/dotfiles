@@ -30,6 +30,9 @@ return {
       }
     })
 
+    -- sourcekit for swift and such, it is not in mason
+    require("lspconfig")["sourcekit"].setup({})
+
     require("lsp_signature").setup({
       bind = true,
       hint_enable = false,

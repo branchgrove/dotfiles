@@ -7,7 +7,9 @@ return {
         templ = { "templ" },
         go = { "gofmt" },
         terraform = { "terraform_fmt" },
-        sh = { "shfmt" }
+        sh = { "shfmt" },
+        json = { "fixjson" },
+        swift = { "swift_format" },
       },
       lsp_fallback = false,
     })
