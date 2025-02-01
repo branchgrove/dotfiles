@@ -4,10 +4,16 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         javascript = { { "biome", "prettier" } },
+        typescript = { { "biome", "prettier" } },
+        javascriptreact = { { "biome", "prettier" } },
+        typescriptreact = { { "biome", "prettier" } },
         templ = { "templ" },
-        go = { "gofmt" },
+        go = { "gofumpt" },
         terraform = { "terraform_fmt" },
         sh = { "shfmt" },
+        python = { "ruff" },
+        xml = { "xmlformat" },
+        markdown = { "deno_fmt" },
         json = { "fixjson" },
         swift = { "swift_format" },
       },
