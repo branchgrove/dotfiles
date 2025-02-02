@@ -1,15 +1,25 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    javascript = { "biome", "prettier" },
+    typescript = { "biome", "prettier" },
+    javascriptreact = { "biome", "prettier" },
+    typescriptreact = { "biome", "prettier" },
+    templ = { "templ" },
+    go = { "gofumpt" },
+    terraform = { "terraform_fmt" },
+    sh = { "shfmt" },
+    python = { "ruff" },
+    xml = { "xmlformat" },
+    markdown = { "deno_fmt" },
+    json = { "fixjson" },
+    swift = { "swift_format" },
   },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+  default_format_opts = {
+    lsp_format = "fallback",
+    require_cwd = true,
+  },
+  formatters = {},
 }
 
 return options

@@ -1,6 +1,7 @@
 require "nvchad.options"
 
--- add yours here!
-
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+local o = vim.opt
+o.title = true
+o.list = true
+o.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
+o.hlsearch = false -- Highlight text on search (/)

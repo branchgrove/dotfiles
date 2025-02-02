@@ -3,22 +3,37 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
-local servers = { "html", "cssls" }
+local servers = {
+  html = {},
+  cssls = {},
+  ts_ls = {
+    single_file_support = false,
+  },
+}
 local nvlsp = require "nvchad.configs.lspconfig"
+local map = vim.keymap.set
+
+local on_attach = function(client, bufnr)
+  nvlsp.on_attach(client, bufnr)
+
+  map("n", "<leader>lr", function()
+    vim.lsp.buf.rename()
+  end, { desc = "rename symbol" })
+end
 
 -- lsps with default config
-for _, lsp in ipairs(servers) do
+for lsp, config in pairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
+    on_attach = on_attach,
     on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
+    capabilities = vim.tbl_deep_extend("force", nvlsp.capabilities, config),
   }
 end
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+require("lsp_signature").setup({
+  bind = true,
+  hint_enable = false,
+  hint_prefix = "",
+  floating_window = true,
+  always_trigger = true,
+})

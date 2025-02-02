@@ -1,25 +1,44 @@
 return {
   {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    "branchgrove/conform.nvim",
+    opts = function()
+      return require "configs.conform"
+    end,
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "ray-x/lsp_signature.nvim",
+    },
     config = function()
       require "configs.lspconfig"
     end,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      return require "configs.cmp"
+    end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = "BufWritePre",
+    config = function()
+      require("lint").linters_by_ft = {
+        javascript = { "eslint", "biomejs" },
+        typescript = { "eslint", "biomejs" },
+        terraform = { "terraform_validate" },
+      }
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("lint").try_lint(nil, { ignore_errors = true })
+        end,
+      })
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = { ensure_installed = "all" },
+  },
 }
