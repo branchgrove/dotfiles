@@ -17,7 +17,6 @@ local options = {
   },
   default_format_opts = {
     lsp_format = "fallback",
-    require_cwd = true,
   },
   formatters = {},
 }
