@@ -6,9 +6,11 @@ local lspconfig = require "lspconfig"
 local servers = {
   html = {},
   cssls = {},
+  jsonls = {},
   ts_ls = {
     single_file_support = false,
   },
+  gopls = {},
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 local map = vim.keymap.set
@@ -37,3 +39,4 @@ require("lsp_signature").setup({
   floating_window = true,
   always_trigger = true,
 })
+require "diagnostic"

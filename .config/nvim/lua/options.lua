@@ -1,7 +1,8 @@
 require "nvchad.options"
 
-local o = vim.opt
-o.title = true
-o.list = true
-o.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
-o.hlsearch = false -- Highlight text on search (/)
+local opt = vim.opt
+opt.title = true
+opt.list = true
+opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
+opt.hlsearch = false -- Highlight text on search (/)
+opt.clipboard = ""

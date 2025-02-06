@@ -10,8 +10,8 @@ del("n", "<leader>fm")
 del("n", "<leader>cm")
 del("n", "<leader>ch")
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+map({"n", "v"}, "<C-y>", "\"+y")
+map({"n", "v"}, "<C-p>", "\"+p")
 
 map("n", "L", function()
   require("nvchad.tabufline").next()

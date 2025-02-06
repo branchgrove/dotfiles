@@ -16,7 +16,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function()
+    config = function()
       return require "configs.cmp"
     end,
   },

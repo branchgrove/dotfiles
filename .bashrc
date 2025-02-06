@@ -6,6 +6,10 @@ bind 'set colored-stats on'
 
 shopt -s cdspell
 shopt -s nocaseglob
+shopt -s checkwinsize
+shopt -s no_empty_cmd_completion
+shopt -s autocd
+shopt -s globstar
 
 set -o vi
 

@@ -15,4 +15,4 @@ options.sources = {
     { name = "path" },
   }
 
-return options
+cmp.setup(options)
